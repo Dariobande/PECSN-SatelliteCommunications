@@ -1,0 +1,17 @@
+
+# This file is automatically included by OMNeT++'s Makefile.
+#  (https://doc.omnetpp.org/omnetpp/manual/#sec:makefrag)
+#
+# We use it to define custom compiler flags, mainly for debugging purposes.
+# Remember to run "make clean" before recompiling the project with the uncommented flags.
+#
+
+# Detailed debug statements regarding everything that in the simulation is random
+#CFLAGS += -DDEBUG_RNGS
+
+# Detailed debug statements regarding the scheduling process
+#CFLAGS += -DDEBUG_SCHEDULER
+
+# Detailed debug statements regarding the registration of packets segments 
+#  at the oracle and their retrieval by the terminals.
+#CFLAGS += -DDEBUG_TERMINALS
