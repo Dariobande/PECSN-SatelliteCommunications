@@ -35,12 +35,12 @@ Key capabilities of the system include:
 | **Simulation Engine** | OMNeT++ | Discrete-event simulation framework written in C++ |
 | **Network Topology** | Star / Relay Network | Ground Station, Bent-Pipe Satellite, N Terminals, and Oracle helper |
 | **Slot Duration** | Synchronized Slotted Aloha / TDMA | Fixed slot duration of 80 ms |
-| **Traffic Model** | M/U/1 per Terminal Queue | Exponential inter-arrivals ($\lambda^{-1} = 40$ ms), Uniform packet size (20–80 bytes) |
+| **Traffic Model** | M/U/1 per Terminal Queue | Exponential inter-arrivals (mean 40 ms), Uniform packet size (20–80 bytes) |
 | **Coding Rate Levels** | 7 Discrete ACM States | Low rates (`L3`, `L2`, `L1`), Reference (`R`), High rates (`H1`, `H2`, `H3`) |
-| **Block Capacities** | Variable Slot Capacity | $904/M$ (`L3`) to $3616/M$ (`H3`) bytes per block in an $M$-block frame |
+| **Block Capacities** | Variable Slot Capacity | 904/M (`L3`) to 3616/M (`H3`) bytes per block in an M-block frame |
 | **Scheduling Discipline** | MaxCR Policy | Greedy high-to-low coding rate priority with non-preemptive queue serving |
-| **Channel Distributions** | Stochastic Ensembles | Uniform ($U(0, 7)$), Normal ($\mu=3.5, \sigma=1$), and Terminal-dependent Binomial |
-| **RNG Stream Isolation** | Dual-Stream per Terminal | $2 \times N$ RNGs ($2i$ for packet arrival/size, $2i+1$ for terminal coding rate) |
+| **Channel Distributions** | Stochastic Ensembles | Discrete Uniform, Normal (μ = 3.5, σ = 1), and Terminal-dependent Binomial |
+| **RNG Stream Isolation** | Dual-Stream per Terminal | 2 × N RNGs (2i for packet arrival/size, 2i+1 for terminal coding rate) |
 | **Statistical Methodology** | Independent Replications | 30 replications per configuration, 10 s warm-up removal, 800 s run limit |
 
 ---
@@ -74,15 +74,15 @@ Each 80 ms communication slot follows a strict three-phase cycle:
 
 ### 3. Coding Rates & Capacity Scale
 
-| Coding Rate (CR) | Base Slot Bytes ($M=1$) | Block Capacity ($M$ Blocks) | Theoretical Peak Bitrate |
+| Coding Rate (CR) | Base Slot Bytes (M=1) | Block Capacity (M Blocks) | Theoretical Peak Bitrate |
 | :---: | :---: | :---: | :---: |
-| **L3** | 904 B | $904 / M$ B | 90.4 kbps |
-| **L2** | 1356 B | $1356 / M$ B | 135.6 kbps |
-| **L1** | 1808 B | $1808 / M$ B | 180.8 kbps |
-| **R** | 2260 B | $2260 / M$ B | 226.0 kbps |
-| **H1** | 2712 B | $2712 / M$ B | 271.2 kbps |
-| **H2** | 3164 B | $3164 / M$ B | 316.4 kbps |
-| **H3** | 3616 B | $3616 / M$ B | 361.6 kbps |
+| **L3** | 904 B | 904 / M B | 90.4 kbps |
+| **L2** | 1356 B | 1356 / M B | 135.6 kbps |
+| **L1** | 1808 B | 1808 / M B | 180.8 kbps |
+| **R** | 2260 B | 2260 / M B | 226.0 kbps |
+| **H1** | 2712 B | 2712 / M B | 271.2 kbps |
+| **H2** | 3164 B | 3164 / M B | 316.4 kbps |
+| **H3** | 3616 B | 3616 / M B | 361.6 kbps |
 
 ### 4. Experimental Factors & Channel Scenarios
 
