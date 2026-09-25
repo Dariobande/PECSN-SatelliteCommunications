@@ -1,19 +1,13 @@
 # PECSN - Satellite Communications
 
-[![Language](https://img.shields.io/badge/Language-C%2B%2B14%20%2F%20C%2B%2B17-blue.svg)](https://isocpp.org/)
-[![Simulator](https://img.shields.io/badge/Simulator-OMNeT%2B%2B%205.x%20%2F%206.x-orange.svg)](https://omnetpp.org/)
-[![Modeling](https://img.shields.io/badge/Modeling-NED-brightgreen.svg)](https://doc.omnetpp.org/omnetpp/manual/#sec:ned-lang)
+[![Language](https://img.shields.io/badge/Language-C%2B%2B-blue.svg)](https://isocpp.org/)
+[![Simulator](https://img.shields.io/badge/Simulator-OMNeT%2B%2B-orange.svg)](https://omnetpp.org/)
 
 [Technical Report](Documentation.pdf) | [Presentation Slides](Presentation.pdf) | [Project Specifications](Specifications.pdf) | [Source Code](satellite-communications/src/)
 
 This repository contains the design, discrete-event simulation modeling, and performance evaluation of a **Satellite Communications System**, implemented in OMNeT++ and C++. The system models a bent-pipe satellite relaying downlink data from a Ground Station (GS) to a set of terrestrial terminals, managing per-terminal dedicated FIFO queues through a slotted transmission protocol and a greedy **Maximum Coding Rate (MaxCR)** frame scheduling policy.
 
 The project was developed for the **Performance Evaluation of Computer Systems and Networks** (PECSN) course (Master of Science in Computer Engineering, **Università di Pisa**), Academic Year 2024–2025.
-
-Authors:
-- **Dario Bandecchi**
-- **Francesco De Lucchini**
-- **Niccolò Mulè**
 
 ---
 
@@ -38,7 +32,7 @@ Key capabilities of the system include:
 
 | System Component | Technology / Mechanism | Specification / Details |
 | :--- | :---: | :--- |
-| **Simulation Engine** | OMNeT++ (5.x / 6.x) | Discrete-event simulation framework written in C++ |
+| **Simulation Engine** | OMNeT++ | Discrete-event simulation framework written in C++ |
 | **Network Topology** | Star / Relay Network | Ground Station, Bent-Pipe Satellite, N Terminals, and Oracle helper |
 | **Slot Duration** | Synchronized Slotted Aloha / TDMA | Fixed slot duration of 80 ms |
 | **Traffic Model** | M/U/1 per Terminal Queue | Exponential inter-arrivals ($\lambda^{-1} = 40$ ms), Uniform packet size (20–80 bytes) |
@@ -145,7 +139,7 @@ PECSN-SatelliteCommunications/
 
 ### Prerequisites
 
-- **OMNeT++**: Version 5.6+ or 6.0+ (including the graphical simulation IDE).
+- **OMNeT++**: Simulation environment with graphical IDE.
 
 ### Running the Simulator
 
